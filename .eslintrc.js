@@ -14,6 +14,7 @@ module.exports = {
   rules: {
     'no-unused-expressions': 'off',
     'vue/no-v-html': 'off',
-    'no-console': ['error', { allow: ['warn', 'error'] }]
+    'no-console': ['error', { allow: ['warn', 'error'] }],
+    '@typescript-eslint/ban-ts-comment': 'off'
   }
 }

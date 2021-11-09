@@ -1,8 +1,11 @@
 <template>
-  <div class="font-bold text-red-600">index page</div>
+  <div>
+    <div class="font-bold text-red-600 mb-8">landing page</div>
+    <NuxtLink to="/dashboard" class="p-4 bg-indigo-500 rounded-full">Go to dashboard</NuxtLink>
+  </div>
 </template>
 <script lang="ts">
-export default defineComponent({
+export default {
   data() {
     return {
       test: 'hello'
@@ -11,5 +14,5 @@ export default defineComponent({
   mounted() {
     // console.log('hello')
   }
-})
+}
 </script>
