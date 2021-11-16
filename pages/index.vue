@@ -5,14 +5,10 @@
   </div>
 </template>
 <script lang="ts">
-export default {
-  data() {
-    return {
-      test: 'hello'
-    }
-  },
+import { defineComponent } from '@vue/runtime-core'
+
+export default defineComponent({
   mounted() {
-    // console.log('hello')
   }
-}
+})
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header>This is a home layout</header>
+    <header>This is a dashboard layout</header>
     <slot />
     <footer>Footer ph</footer>
   </div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header>This is a home layout</header>
+    <header>This is a login layout</header>
     <slot />
     <footer>Footer ph</footer>
   </div>
