@@ -6,7 +6,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { useAsyncData } from '#app'
+// import { useAsyncData } from '#app'
 
-const { data } = await useAsyncData('blizzard', () => $fetch('/api/blizzard'))
+// const { data } = await useAsyncData('blizzard', () => $fetch('/api/blizzard'))
 </script>
