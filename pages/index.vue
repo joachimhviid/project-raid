@@ -6,12 +6,12 @@
 </template>
 <script lang="ts">
 import { defineComponent } from '@vue/runtime-core'
-const api = await $fetch('/api/battlenet')
+// const api = await $fetch('/api/battlenet')
 
 export default defineComponent({
   data() {
     return {
-      api: api
+      // api: api
     }
   }
 })
