@@ -6,9 +6,13 @@
 </template>
 <script lang="ts">
 import { defineComponent } from '@vue/runtime-core'
+const api = await $fetch('/api/battlenet')
 
 export default defineComponent({
-  mounted() {
+  data() {
+    return {
+      api: api
+    }
   }
 })
 </script>

@@ -21,11 +21,13 @@
   },
   "dependencies": {
     "@types/express": "^4.17.13",
+    "@types/express-session": "^1.17.4",
     "@types/passport": "^1.0.7",
     "@types/passport-bnet": "^2.0.2",
     "blizzard.js": "^4.1.1",
     "eslint-plugin-prettier": "^4.0.0",
     "express": "^4.17.1",
+    "express-session": "^1.17.2",
     "passport": "^0.5.0",
     "passport-bnet": "^2.0.0",
     "tailwindcss": "^2.2.19",
