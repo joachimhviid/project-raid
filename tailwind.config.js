@@ -9,7 +9,16 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        'rblue': '#7F9CF5',
+        'rblue-hover': '#6C8DF1',
+      },
+      fontFamily: {
+        'rtitle': 'Cambria',
+        'rtext': 'Calibri',
+      }
+    }
   },
   variants: {
     extend: {}
