@@ -11,5 +11,9 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  buildModules: ['@pinia/nuxt'],
+  publicRuntimeConfig: {
+    regions: ['eu', 'us', 'kr', 'tw']
   }
 })
