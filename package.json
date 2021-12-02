@@ -17,6 +17,7 @@
     "prettier": "2.4.1",
     "sass": "^1.43.4",
     "sass-loader": "^12.3.0",
+    "stylelint-config-recommended": "^6.0.0",
     "tailwind-config-viewer": "^1.6.2"
   },
   "dependencies": {

@@ -1,3 +1,23 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.btn-container {
+    @apply flex flex-nowrap float-right pr-4 pt-2 -ml-80;
+}
+
+.btn {
+    @apply px-8 py-3 m-4 max-w-xs bg-rblue text-white text-center font-rtext text-xl font-medium tracking-wider rounded-full;
+
+    &:hover {
+        @apply bg-rblue-hover;
+    }
+}
+
+.sign-up {
+    @apply px-4 py-3 m-4 text-white font-rtext text-xl font-medium tracking-wider;
+
+    &:hover {
+        @apply text-rblue;
+    }
+}
