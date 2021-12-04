@@ -1,36 +1,46 @@
 <template>
   <div>
     <form>
-      <select name="region" id="region">
+      <select name="region" id="region" v-model="region">
         <option v-for="(region, index) in $config.regions" :value="region" :key="index" v-text="region.toUpperCase()" />
       </select>
-      <input type="text" id="characterName" placeholder="Character name" />
-      <select name="realm" id="realm">
-        <option v-for="(realm, index) in apiRealms" :value="realm.slug" :key="index" v-text="realm.name" />
+      <input type="text" id="characterName" placeholder="Character name" v-model="name" />
+      <select name="realm" id="realm" v-model="realm">
+        <option v-for="(realm, index) in regionRealms" :value="realm.slug" :key="index" v-text="realm.name" />
       </select>
     </form>
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from '@vue/runtime-core'
-// import { useWow } from '@/stores/wow'
-
-const { realms } = await $fetch('/api/blizzard')
+import { useWow } from '@/stores/wow'
+import { Realm } from '@/types/BlizzardTypes'
+import { Origins } from 'blizzard.js/dist/endpoints'
 
 export default defineComponent({
   layout: 'authentication',
-  // setup() {
-  //   const wow = useWow()
-  //   wow.createClient()
-  //   wow.getRealms()
-  //   const realms = wow.realms
-  //   return {
-  //     realms
-  //   }
-  // },
+  async setup() {
+    const wow = useWow()
+    await wow.getRealms()
+  },
   data() {
     return {
-      apiRealms: realms
+      region: 'eu' as Origins,
+      name: '',
+      realm: ''
+    }
+  },
+  watch: {
+    async region() {
+      const wow = useWow(this.$pinia)
+      wow.setRegion(this.region)
+      await wow.getRealms()
+      this.realm = ''
+    }
+  },
+  computed: {
+    regionRealms(): Realm[] {
+      const wow = useWow(this.$pinia)
+      return wow.realms
     }
   }
 })

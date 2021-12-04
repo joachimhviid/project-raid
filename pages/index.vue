@@ -6,14 +6,5 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from '@vue/runtime-core'
-// const apiRes = await $fetch('http://localhost:5000/test')
-
-export default defineComponent({
-  // data() {
-  //   return {
-  //     response: apiRes
-  //   }
-  // }
-})
+export default defineComponent({})
 </script>

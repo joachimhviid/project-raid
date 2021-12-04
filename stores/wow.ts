@@ -1,27 +1,32 @@
 import { defineStore } from 'pinia'
-import { wow } from 'blizzard.js'
-import { WoWClient } from 'blizzard.js/dist/wow'
 import { Locales, Origins } from 'blizzard.js/dist/endpoints'
+import { Realm } from '@/types/BlizzardTypes'
+
+const availableLocales: Record<Origins, Locales[]> = {
+  eu: ['en_GB', 'es_ES', 'fr_FR', 'ru_RU', 'de_DE', 'pt_PT', 'it_IT'],
+  us: ['en_US', 'es_MX', 'pt_BR'],
+  kr: ['ko_KR'],
+  tw: ['zh_TW'],
+  sea: ['multi']
+}
 
 export const useWow = defineStore('wow', {
   state: () => ({
-    client: undefined as unknown as WoWClient,
     region: 'eu',
     locale: 'en_GB',
-    realms: undefined as unknown as any[]
+    realms: undefined as unknown as Realm[]
   }),
   actions: {
-    async createClient(origin: Origins = 'eu', locale: Locales = 'en_GB') {
-      this.client = await wow.createInstance({
-        key: process.env.BNET_ID ?? '',
-        secret: process.env.BNET_SECRET ?? '',
-        origin,
-        locale
+    async getRealms() {
+      const { realms } = await $fetch('/api/realms', {
+        method: 'post',
+        body: { region: this.region, locale: this.locale }
       })
+      this.realms = realms
     },
-    async getRealms(region: Origins = 'eu') {
-      const realmsResponse = await this.client.realm()
-      this.realms = realmsResponse.data
+    setRegion(region: Origins, locale?: Locales) {
+      this.region = region
+      this.locale = locale ?? availableLocales[region][0]
     }
   }
 })
