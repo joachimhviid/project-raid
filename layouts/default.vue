@@ -1,8 +1,8 @@
 <template>
   <div>
-    <header>This is a home layout</header>
+    
     <slot />
-    <footer>Footer ph</footer>
+    
   </div>
 </template>
 <script lang="ts">
