@@ -11,12 +11,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'rblue': '#7F9CF5',
-        'rblue-hover': '#6C8DF1',
+        rblue: '#426DF0',
+        // rblue: '#7F9CF5',
+        'rblue-hover': '#6C8DF1'
       },
       fontFamily: {
-        'rtitle': 'Cambria',
-        'rtext': 'Calibri',
+        rtitle: 'Cambria',
+        rtext: 'Calibri'
       }
     }
   },
