@@ -11,5 +11,13 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  buildModules: ['@pinia/nuxt'],
+  publicRuntimeConfig: {
+    regions: ['eu', 'us', 'kr', 'tw']
+  },
+  privateRuntimeConfig: {
+    BNET_ID: process.env.BNET_ID,
+    BNET_SECRET: process.env.BNET_SECRET
   }
 })
