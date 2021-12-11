@@ -9,7 +9,7 @@
       >
         <option v-for="(region, index) in $config.regions" :value="region" :key="index" v-text="region.toUpperCase()" />
       </select>
-      <div class="relative col-span-4 md:flex-shrink">
+      <div class="relative col-span-4 md:flex-grow">
         <input
           type="text"
           id="characterName"
@@ -35,9 +35,12 @@
       </div>
       <RealmSelector :region="region" v-model="realm" class="col-span-3 row-start-2" />
     </div>
-    <button class="w-full rounded-lg bg-rblue text-white p-4 font-bold transition hover:bg-rblue-hover">
+    <NuxtLink
+      to="/dashboard"
+      class="text-center w-full rounded-lg bg-rblue text-white p-4 font-bold transition hover:bg-rblue-hover"
+    >
       Get Dashboard
-    </button>
+    </NuxtLink>
   </form>
 </template>
 <script lang="ts">
