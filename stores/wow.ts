@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { Locales, Origins } from 'blizzard.js/dist/endpoints'
-import { Realm } from '@/types/BlizzardTypes'
+import { CharacterProps, Realm } from '@/types/BlizzardTypes'
 
 const availableLocales: Record<Origins, Locales[]> = {
   eu: ['en_GB', 'es_ES', 'fr_FR', 'ru_RU', 'de_DE', 'pt_PT', 'it_IT'],
@@ -14,7 +14,8 @@ export const useWow = defineStore('wow', {
   state: () => ({
     region: 'eu',
     locale: 'en_GB',
-    realms: undefined as unknown as Realm[]
+    realms: undefined as unknown as Realm[],
+    character: undefined as unknown as CharacterProps
   }),
   actions: {
     async getRealms() {
@@ -27,6 +28,14 @@ export const useWow = defineStore('wow', {
     setRegion(region: Origins, locale?: Locales) {
       this.region = region
       this.locale = locale ?? availableLocales[region][0]
+    },
+    setCharacter(name: string, realm: string, region: Origins, locale?: Locales) {
+      this.character = {
+        name,
+        realm,
+        region,
+        locale: locale ?? availableLocales[region][0]
+      }
     }
   }
 })
