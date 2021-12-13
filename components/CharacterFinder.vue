@@ -1,5 +1,5 @@
 <template>
-  <form class="flex flex-col">
+  <form @submit.prevent="submitCharacter" class="flex flex-col">
     <div class="grid grid-cols-4 grid-rows-2 gap-2 md:flex md:flex-row mb-4 md:space-x-2">
       <select
         name="region"
@@ -35,16 +35,14 @@
       </div>
       <RealmSelector :region="region" v-model="realm" class="col-span-3 row-start-2" />
     </div>
-    <NuxtLink
-      to="/dashboard"
-      class="text-center w-full rounded-lg bg-rblue text-white p-4 font-bold transition hover:bg-rblue-hover"
-    >
+    <button class="text-center w-full rounded-lg bg-rblue text-white p-4 font-bold transition hover:bg-rblue-hover">
       Get Dashboard
-    </NuxtLink>
+    </button>
   </form>
 </template>
 <script lang="ts">
 import { Origins } from 'blizzard.js/dist/endpoints'
+import { useWow } from '@/stores/wow'
 
 export default defineComponent({
   name: 'CharacterFinder',
@@ -53,6 +51,13 @@ export default defineComponent({
       region: 'eu' as Origins,
       name: '',
       realm: ''
+    }
+  },
+  methods: {
+    submitCharacter() {
+      const wow = useWow(this.$pinia)
+      wow.setCharacter(this.name, this.realm, this.region)
+      this.$router.push(`/dashboard/${this.region}/${this.realm}/${this.name}/progress`)
     }
   }
 })
