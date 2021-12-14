@@ -18,6 +18,10 @@ module.exports = {
       fontFamily: {
         rtitle: 'Cambria',
         rtext: 'Calibri'
+      },
+      screens: {
+        'large': {'min': '1151px','max': '1600px'},
+        'medium': {'max': '1150px'},
       }
     }
   },
