@@ -37,6 +37,22 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-export default defineComponent({})
+<script lang="ts" setup>
+useMeta({
+  title: 'Raidhub | World of Warcraft Dashboard',
+  meta: [
+    {
+      name: 'og:title',
+      content: 'Raidhub | World of Warcraft Dashboard'
+    },
+    {
+      name: 'og:description',
+      content: 'Your one-stop shop for all your relevant WoW data.'
+    },
+    {
+      name: 'og:site_name',
+      content: 'Raidhub'
+    }
+  ]
+})
 </script>

@@ -17,6 +17,25 @@
 </template>
 <script lang="ts">
 export default defineComponent({
-  layout: 'authentication'
+  layout: 'authentication',
+  setup() {
+    useMeta({
+      title: 'Raidhub | Select your character',
+      meta: [
+        {
+          name: 'og:title',
+          content: 'Raidhub | Select your character'
+        },
+        {
+          name: 'og:description',
+          content: 'Your one-stop shop for all your relevant WoW data.'
+        },
+        {
+          name: 'og:site_name',
+          content: 'Raidhub'
+        }
+      ]
+    })
+  }
 })
 </script>

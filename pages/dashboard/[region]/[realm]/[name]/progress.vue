@@ -30,5 +30,23 @@ const { data: encounters } = await useAsyncData('encounters', () =>
     }
   })
 )
+
+useMeta({
+  title: `${wow.character.name} @ ${wow.character.realm} (${wow.character.region}) | Raidhub`,
+  meta: [
+    {
+      name: 'og:title',
+      content: `Raidhub |${wow.character.name} @ ${wow.character.realm} (${wow.character.region})`
+    },
+    {
+      name: 'og:description',
+      content: 'Class/Spec - ilvl - m+ score - raid prog'
+    },
+    {
+      name: 'og:site_name',
+      content: 'Raidhub'
+    }
+  ]
+})
 </script>
 <style lang="scss" scoped></style>
