@@ -19,10 +19,11 @@ export const useWow = defineStore('wow', {
   }),
   actions: {
     async getRealms() {
-      const { realms } = await $fetch('/api/realms', {
-        method: 'post',
-        body: { region: this.region, locale: this.locale }
-      })
+      // const { realms } = await $fetch('/api/realms', {
+      //   method: 'post',
+      //   body: { region: this.region, locale: this.locale }
+      // })
+      const { realms } = await $fetch('/api/realms', { body: { region: this.region, locale: this.locale } })
       this.realms = realms
     },
     setRegion(region: Origins, locale?: Locales) {

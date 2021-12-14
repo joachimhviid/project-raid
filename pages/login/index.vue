@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white rounded-lg p-8 max-w-screen-sm mx-4 sm:mx-auto mt-12">
+  <div class="dark bg-white dark:bg-gray-800 rounded-lg p-8 max-w-screen-sm mx-4 sm:mx-auto mt-12">
     <h1
       class="
         relative
