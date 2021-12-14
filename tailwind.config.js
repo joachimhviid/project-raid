@@ -7,14 +7,13 @@ module.exports = {
     `plugins/**/*.{js,ts}`,
     `nuxt.config.{js,ts}`
   ],
-  darkMode: 'class', // or 'media' or 'false'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
         rblue: '#426DF0',
         // rblue: '#7F9CF5',
-        'rblue-hover': '#6C8DF1',
-        rwhite: '#FFFFFF',
+        'rblue-hover': '#6C8DF1'
       },
       fontFamily: {
         rtitle: 'Cambria',

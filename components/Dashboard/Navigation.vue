@@ -11,35 +11,75 @@
       <!--TODO: Make nav item component-->
       <NuxtLink
         to="/dashboard/progress"
-        class="flex flex-col py-6 items-center text-rblue font-rtext text-xl text-center hover:bg-rblue hover:bg-opacity-25"
+        class="
+          flex flex-col
+          py-6
+          items-center
+          text-rblue
+          font-rtext
+          text-xl text-center
+          hover:bg-rblue hover:bg-opacity-25
+        "
       >
         <img class="w-16" src="@/assets/icons/pve_pvp.png" alt="" />
         PROGRESS
       </NuxtLink>
       <NuxtLink
         to="/dashboard/equipment"
-        class="flex flex-col py-6 items-center text-rblue font-rtext text-xl text-center hover:bg-rblue hover:bg-opacity-25"
+        class="
+          flex flex-col
+          py-6
+          items-center
+          text-rblue
+          font-rtext
+          text-xl text-center
+          hover:bg-rblue hover:bg-opacity-25
+        "
       >
         <img class="w-12" src="@/assets/icons/equipment.png" alt="" />
         EQUIPMENT
       </NuxtLink>
       <NuxtLink
         to="/dashboard/collection"
-        class="flex flex-col py-6 items-center text-rblue font-rtext text-xl text-center hover:bg-rblue hover:bg-opacity-25"
+        class="
+          flex flex-col
+          py-6
+          items-center
+          text-rblue
+          font-rtext
+          text-xl text-center
+          hover:bg-rblue hover:bg-opacity-25
+        "
       >
         <img class="w-12" src="@/assets/icons/collections.png" alt="" />
         COLLECTION
       </NuxtLink>
       <NuxtLink
         to="/dashboard/guild"
-        class="flex flex-col py-6 items-center text-rblue font-rtext text-xl text-center hover:bg-rblue hover:bg-opacity-25"
+        class="
+          flex flex-col
+          py-6
+          items-center
+          text-rblue
+          font-rtext
+          text-xl text-center
+          hover:bg-rblue hover:bg-opacity-25
+        "
       >
         <img class="w-12" src="@/assets/icons/guild.png" alt="" />
         GUILD
       </NuxtLink>
       <NuxtLink
         to="/dashboard/settings"
-        class="flex flex-col py-6 items-center text-rblue font-rtext text-xl text-center hover:bg-rblue hover:bg-opacity-25"
+        class="
+          flex flex-col
+          py-6
+          items-center
+          text-rblue
+          font-rtext
+          text-xl text-center
+          hover:bg-rblue hover:bg-opacity-25
+        "
       >
         <img class="w-12" src="@/assets/icons/settings.png" alt="" />
         SETTINGS
