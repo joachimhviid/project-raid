@@ -28,6 +28,14 @@
     </datalist>
   </div>
 </template>
+<!--<script lang="ts" setup>-->
+<!--const { data: realms } = await useAsyncData('realms', () =>-->
+<!--  $fetch('/api/realms', {-->
+<!--    method: 'post',-->
+<!--    body: { region: 'eu', locale: 'en_GB' }-->
+<!--  })-->
+<!--)-->
+<!--</script>-->
 <script lang="ts">
 import { Origins } from 'blizzard.js/dist/endpoints'
 import { useWow } from '@/stores/wow'
@@ -48,13 +56,22 @@ export default defineComponent({
   emits: ['update:modelValue'],
   data() {
     return {
-      realm: '',
-      realmList: []
+      realm: ''
     }
   },
-  async created() {
-    const { realms } = await $fetch('/api/realms')
-    this.realmList = realms
+  async setup() {
+    const { data } = await useAsyncData(
+      'realms',
+      () =>
+        $fetch('/api/realms', {
+          method: 'post',
+          body: { region: 'eu', locale: 'en_GB' }
+        }),
+      { pick: ['realms'] }
+    )
+    return {
+      data
+    }
   },
   watch: {
     async region() {
@@ -67,7 +84,7 @@ export default defineComponent({
   computed: {
     regionRealms(): Realm[] {
       const wow = useWow(this.$pinia)
-      return wow.realms ?? this.realmList
+      return wow.realms ?? this.data.realms
     }
   },
   methods: {

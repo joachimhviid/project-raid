@@ -9,16 +9,13 @@ interface RealmsBody {
 }
 
 export default async (req: IncomingMessage) => {
-  // const body: RealmsBody = await useBody(req)
-  console.log(req)
+  const body: RealmsBody = await useBody(req)
 
   const wowClient = await wow.createInstance({
     key: process.env.BNET_ID ?? '',
     secret: process.env.BNET_SECRET ?? '',
-    // origin: body.region ?? 'eu',
-    origin: 'eu',
-    // locale: body.locale ?? 'en_GB'
-    locale: 'en_GB'
+    origin: body.region ?? 'eu',
+    locale: body.locale ?? 'en_GB'
   })
   const realms = await wowClient.realm()
   return realms.data
