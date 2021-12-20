@@ -24,74 +24,56 @@
       Realm
     </label>
     <datalist id="realms">
+      <option v-if="!regionRealms">Loading realm options...</option>
       <option v-for="(realm, index) in regionRealms" :key="index" :value="realm.name" />
     </datalist>
   </div>
 </template>
-<!--<script lang="ts" setup>-->
-<!--const { data: realms } = await useAsyncData('realms', () =>-->
-<!--  $fetch('/api/realms', {-->
-<!--    method: 'post',-->
-<!--    body: { region: 'eu', locale: 'en_GB' }-->
-<!--  })-->
-<!--)-->
-<!--</script>-->
-<script lang="ts">
+<script lang="ts" setup>
 import { Origins } from 'blizzard.js/dist/endpoints'
+import { slugify } from '@/utils/StringHelpers'
 import { useWow } from '@/stores/wow'
 import { Realm } from '@/types/BlizzardTypes'
-import { slugify } from '@/utils/StringHelpers'
 
-export default defineComponent({
-  name: 'RealmSelector',
-  props: {
-    region: {
-      type: String as PropType<Origins>,
-      default: 'eu'
-    },
-    modelValue: {
-      type: String
-    }
-  },
-  emits: ['update:modelValue'],
-  data() {
-    return {
-      realm: ''
-    }
-  },
-  async setup() {
-    const { data } = await useAsyncData(
-      'realms',
-      () =>
-        $fetch('/api/realms', {
-          method: 'post',
-          body: { region: 'eu', locale: 'en_GB' }
-        }),
-      { pick: ['realms'] }
-    )
-    return {
-      data
-    }
-  },
-  watch: {
-    async region() {
-      const wow = useWow(this.$pinia)
-      wow.setRegion(this.region)
-      await wow.getRealms()
-      this.realm = ''
-    }
-  },
-  computed: {
-    regionRealms(): Realm[] {
-      const wow = useWow(this.$pinia)
-      return wow.realms ?? this.data.realms
-    }
-  },
-  methods: {
-    onInput(input: string) {
-      this.realm = slugify(input)
-      this.$emit('update:modelValue', this.realm)
-    }
+const { data: realms, pending } = await useAsyncData(
+  'realms',
+  () =>
+    $fetch('/api/realms', {
+      method: 'post',
+      body: { region: 'eu', locale: 'en_GB' }
+    }),
+  { pick: ['realms'], lazy: true }
+)
+
+const wow = useWow()
+
+const props = withDefaults(
+  defineProps<{
+    region: Origins
+    modelValue: string
+  }>(),
+  {
+    region: 'eu'
   }
+)
+
+const emit = defineEmits(['update:modelValue'])
+
+const regionRealms = computed((): Realm[] => {
+  if (pending.value) return []
+  return wow.realms ?? realms.value.realms
 })
+
+function onInput(input: string) {
+  const realm = slugify(input)
+  emit('update:modelValue', realm)
+}
+
+watch(
+  () => props.region,
+  async () => {
+    wow.setRegion(props.region)
+    await wow.getRealms()
+  }
+)
 </script>

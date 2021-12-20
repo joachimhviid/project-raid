@@ -22,14 +22,6 @@ const wow = useWow()
 const route = useRoute()
 if (!wow.character)
   wow.setCharacter(route.params.name as string, route.params.realm as string, route.params.region as Origins)
-const { data: encounters } = await useAsyncData('encounters', () =>
-  $fetch('/api/progress', {
-    method: 'post',
-    body: {
-      character: wow.character
-    }
-  })
-)
 
 useMeta({
   title: `${wow.character.name} @ ${wow.character.realm} (${wow.character.region}) | Raidhub`,

@@ -5,9 +5,16 @@
     <!--Current expansion tiers > click to see stats-->
   </div>
 </template>
-<script lang="ts">
-export default defineComponent({
-  name: 'Raids'
-})
+<script lang="ts" setup>
+import { useWow } from '~/stores/wow'
+const wow = useWow()
+
+const { data: raids } = await useAsyncData('raids', () =>
+  $fetch('/api/raids', {
+    method: 'post',
+    body: {
+      character: wow.character
+    }
+  })
+)
 </script>
-<style lang="scss" scoped></style>

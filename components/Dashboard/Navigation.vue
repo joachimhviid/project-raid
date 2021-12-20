@@ -10,79 +10,15 @@
     <div class="flex flex-col flex-grow space-y-2 mb-2 w-56">
       <!--TODO: Make nav item component-->
       <NuxtLink
-        to="/dashboard/progress"
-        class="
-          flex flex-col
-          py-6
-          items-center
-          text-rblue
-          font-rtext
-          text-xl text-center
-          hover:bg-rblue hover:bg-opacity-25
-        "
+        v-for="(route, index) in dashboardRoutes"
+        :key="index"
+        :to="route"
+        class="flex flex-col py-6 items-center text-rblue font-rtext text-xl text-center hover:bg-rblue/25"
+        :class="[route === 'progress' ? 'order-first' : '']"
+        append
       >
-        <img class="w-16" src="@/assets/icons/pve_pvp.png" alt="" />
-        PROGRESS
-      </NuxtLink>
-      <NuxtLink
-        to="/dashboard/equipment"
-        class="
-          flex flex-col
-          py-6
-          items-center
-          text-rblue
-          font-rtext
-          text-xl text-center
-          hover:bg-rblue hover:bg-opacity-25
-        "
-      >
-        <img class="w-12" src="@/assets/icons/equipment.png" alt="" />
-        EQUIPMENT
-      </NuxtLink>
-      <NuxtLink
-        to="/dashboard/collection"
-        class="
-          flex flex-col
-          py-6
-          items-center
-          text-rblue
-          font-rtext
-          text-xl text-center
-          hover:bg-rblue hover:bg-opacity-25
-        "
-      >
-        <img class="w-12" src="@/assets/icons/collections.png" alt="" />
-        COLLECTION
-      </NuxtLink>
-      <NuxtLink
-        to="/dashboard/guild"
-        class="
-          flex flex-col
-          py-6
-          items-center
-          text-rblue
-          font-rtext
-          text-xl text-center
-          hover:bg-rblue hover:bg-opacity-25
-        "
-      >
-        <img class="w-12" src="@/assets/icons/guild.png" alt="" />
-        GUILD
-      </NuxtLink>
-      <NuxtLink
-        to="/dashboard/settings"
-        class="
-          flex flex-col
-          py-6
-          items-center
-          text-rblue
-          font-rtext
-          text-xl text-center
-          hover:bg-rblue hover:bg-opacity-25
-        "
-      >
-        <img class="w-12" src="@/assets/icons/settings.png" alt="" />
-        SETTINGS
+        <div class="w-full h-12" :class="route" />
+        {{ route.toUpperCase() }}
       </NuxtLink>
     </div>
 
@@ -106,8 +42,26 @@
     </NuxtLink>
   </nav>
 </template>
-<script lang="ts">
-export default defineComponent({
-  name: 'Navigation'
+<script lang="ts" setup>
+const router = useRouter()
+const dashboardRoutes = computed((): string[] => {
+  const childRoutes = router.options.routes.find((route) => route.name === 'dashboard').children
+  return childRoutes.map((child) => {
+    return child.path.match(/\w+$/g)[0]
+  })
 })
 </script>
+<style lang="scss" scoped>
+.progress {
+  background-image: url('/assets/icons/pve_pvp.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.guild {
+  background-image: url('/assets/icons/guild.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+</style>
