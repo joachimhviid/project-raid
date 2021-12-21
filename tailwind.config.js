@@ -7,13 +7,11 @@ module.exports = {
     `plugins/**/*.{js,ts}`,
     `nuxt.config.{js,ts}`
   ],
-  darkMode: 'class', // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
         rblue: '#426DF0',
-        rwhite: '',
-        // rblue: '#7F9CF5',
         'rblue-hover': '#6C8DF1'
       },
       fontFamily: {
@@ -21,13 +19,14 @@ module.exports = {
         rtext: 'Calibri'
       },
       screens: {
-        'large': {'min': '1151px','max': '1600px'},
-        'medium': {'max': '1150px'},
-      },
+        large: { min: '1151px', max: '1600px' },
+        medium: { max: '1150px' },
+        '3xl': '2200px'
+      }
     }
   },
   variants: {
     extend: {}
   },
-  plugins: []
+  plugins: [require('@tailwindcss/aspect-ratio')]
 }

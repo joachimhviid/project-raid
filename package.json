@@ -13,7 +13,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-nuxt": "^3.0.0",
     "eslint-plugin-vue": "^8.0.3",
-    "nuxt3": "^3.0.0-27319101.3e82f0f",
+    "nuxt3": "latest",
     "prettier": "2.4.1",
     "sass": "^1.43.4",
     "sass-loader": "^12.3.0",
@@ -23,6 +23,7 @@
   "dependencies": {
     "@nuxtjs/composition-api": "^0.30.0",
     "@pinia/nuxt": "^0.1.5",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
     "blizzard.js": "^4.1.1",
     "eslint-plugin-prettier": "^4.0.0",
     "pinia": "^2.0.4",

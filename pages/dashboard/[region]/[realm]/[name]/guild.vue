@@ -1,5 +1,5 @@
 <template>
-    <div>
+  <div>
     <!--Section Title-->
     <div class="flex items-center space-x-3 mb-4">
       <img class="w-14" src="@/assets/icons/guild.png" alt="" />
