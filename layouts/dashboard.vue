@@ -2,8 +2,6 @@
   <div class="absolute w-full h-screen bg-outland bg-cover overflow-hidden">
     <DashboardNavigation />
     <DashboardHeader />
-    <DashboardCardGuildInfo />
-    <!-- <DashboardCardCharacterInfo /> -->
     <slot />
   </div>
 </template>

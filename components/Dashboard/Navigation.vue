@@ -1,8 +1,8 @@
 <template>
   <nav class="fixed top-0 flex flex-col w-56 h-screen px-10 py-6 bg-white bg-opacity-90 items-center">
     <div class="flex flex-col mb-4 text-center">
-      <div class="items-center w-32 h-32 mb-2 overflow-hidden rounded-full border-4 border-rblue">
-        <img class="h-full w-full" src="@/assets/img/sylv.jpg" alt="" />
+      <div class="items-center w-32 h-32 mb-2 overflow-hidden rounded-full border-4 border-rblue self-center">
+        <img class="h-full w-full object-cover" src="@/assets/img/sylv.jpg" alt="" />
       </div>
       <span class="text-rblue font-rtext text-2xl tracking-wide font-bold">Sylvanas</span>
     </div>

@@ -1,16 +1,15 @@
 <template>
   <div>
-    <!--Section Title-->
-    <h1 class="text-4xl text-indigo-400 font-bold mb-4">Progress</h1>
+    <div class="flex items-center space-x-3 mb-4">
+      <img class="w-14" src="@/assets/icons/pve_pvp.png" alt="" />
+      <h2 class="text-rblue font-rtext text-4xl cursor-default">PROGRESS</h2>
+    </div>
     <div class="grid grid-cols-4 grid-rows-2 gap-8">
-      <!--Card > Quick facts + bio-->
       <DashboardCardCharacterInfo class="col-span-2" />
-      <!--Card > raid stats-->
+      <DashboardCardCharacterGuild />
+      <DashboardCardCharacterSocials />
       <DashboardCardRaids class="row-span-2" />
-      <!--Card > dungeon stats-->
-      <DashboardCardDungeons class="row-span-2" />
-      <!--Card > Guild info-->
-      <DashboardCardGuildInfo />
+      <DashboardCardDungeons class="row-span-2" />   
     </div>
   </div>
 </template>

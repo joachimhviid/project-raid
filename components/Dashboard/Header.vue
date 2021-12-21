@@ -6,9 +6,9 @@
       </span>
       <div class="flex items-center">
         <!--TODO: Make search component. Also what are we searching for? Maybe this should be repurposed as a new character selector-->
-        <div class="flex items-center mx-4 border-2 rounded-full h-12 py-2 px-4 border-rblue">
+        <div class="flex items-center mx-4 border-2 rounded-full h-12 py-2 px-4 border-rblue dark:border-white">
           <img class="w-6 h-6" src="~/assets/icons/search.png" alt="" />
-          <input type="text" class="px-4 py-2 w-80 medium:w-40 outline-none bg-transparent text-rblue" placeholder="Search" />
+          <input type="text" class="px-4 py-2 w-80 medium:w-40 outline-none bg-transparent text-rblue dark:text-white" placeholder="Search" />
         </div>
         <button class="w-8 h-8 darkmode-icon bg-cover" @click="toggleDarkMode" />
       </div>
