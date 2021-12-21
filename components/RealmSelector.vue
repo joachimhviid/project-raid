@@ -57,6 +57,9 @@ const props = withDefaults(
   }
 )
 
+wow.setRegion(props.region)
+await wow.getRealms()
+
 const emit = defineEmits(['update:modelValue'])
 
 const regionRealms = computed((): Realm[] => {

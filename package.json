@@ -23,6 +23,7 @@
   "dependencies": {
     "@nuxtjs/composition-api": "^0.30.0",
     "@pinia/nuxt": "^0.1.5",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
     "blizzard.js": "^4.1.1",
     "eslint-plugin-prettier": "^4.0.0",
     "pinia": "^2.0.4",

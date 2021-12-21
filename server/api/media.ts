@@ -4,13 +4,15 @@ import { useBody } from 'h3'
 import { Locales, Origins } from 'blizzard.js/dist/endpoints'
 import config from '#config'
 
-interface RealmsBody {
-  region?: Origins
-  locale?: Locales
+interface MediaBody {
+  region: Origins
+  locale: Locales
+  realm: string
+  name: string
 }
 
 export default async (req: IncomingMessage) => {
-  const body: RealmsBody = await useBody(req)
+  const body: MediaBody = await useBody(req)
 
   const wowClient = await wow.createInstance({
     key: config.BNET_ID ?? '',
@@ -18,6 +20,6 @@ export default async (req: IncomingMessage) => {
     origin: body.region ?? 'eu',
     locale: body.locale ?? 'en_GB'
   })
-  const realms = await wowClient.realm()
-  return realms.data
+  const media = await wowClient.characterMedia({ realm: body.realm, name: body.name })
+  return media.data
 }

@@ -21,12 +21,13 @@ module.exports = {
       },
       screens: {
         large: { min: '1151px', max: '1600px' },
-        medium: { max: '1150px' }
+        medium: { max: '1150px' },
+        '3xl': '2200px'
       }
     }
   },
   variants: {
     extend: {}
   },
-  plugins: []
+  plugins: [require('@tailwindcss/aspect-ratio')]
 }

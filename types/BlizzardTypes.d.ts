@@ -15,6 +15,31 @@ export interface CharacterProps {
   realm: string
   region: Origins
   locale: Locales
+  media?: MediaProps[]
+  raw?: CharacterRaw
+}
+
+export interface MediaProps {
+  key: string
+  value: string
+}
+
+export interface CharacterRaw {
+  key: {
+    href: string
+  }
+  name: string
+  id: number
+  realm: RealmRaw
+}
+
+export interface RealmRaw {
+  key: {
+    href: string
+  }
+  name: string
+  id: number
+  slug: string
 }
 
 export interface MythicPlusProps {

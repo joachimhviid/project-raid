@@ -12,6 +12,7 @@
     >
       Select your character
     </h1>
+    <!--TODO: Create loading state-->
     <CharacterFinder />
   </div>
 </template>

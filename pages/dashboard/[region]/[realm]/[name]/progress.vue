@@ -16,12 +16,8 @@
 </template>
 <script lang="ts" setup>
 import { useWow } from '~/stores/wow'
-import { Origins } from 'blizzard.js/dist/endpoints'
 
 const wow = useWow()
-const route = useRoute()
-if (!wow.character)
-  wow.setCharacter(route.params.name as string, route.params.realm as string, route.params.region as Origins)
 
 useMeta({
   title: `${wow.character.name} @ ${wow.character.realm} (${wow.character.region}) | Raidhub`,
@@ -41,4 +37,3 @@ useMeta({
   ]
 })
 </script>
-<style lang="scss" scoped></style>
