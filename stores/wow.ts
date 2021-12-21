@@ -23,19 +23,34 @@ export const useWow = defineStore('wow', {
         method: 'post',
         body: { region: this.region, locale: this.locale }
       })
+
       this.realms = realms
+    },
+    async getCharacterMedia() {
+      const { assets, character } = await $fetch('/api/media', {
+        method: 'post',
+        body: {
+          region: this.character.region,
+          locale: this.character.locale,
+          realm: this.character.realm,
+          name: this.character.name
+        }
+      })
+      this.character.media = assets
+      this.character.raw = character
     },
     setRegion(region: Origins, locale?: Locales) {
       this.region = region
       this.locale = locale ?? availableLocales[region][0]
     },
-    setCharacter(name: string, realm: string, region: Origins, locale?: Locales) {
+    async setCharacter(name: string, realm: string, region: Origins, locale?: Locales) {
       this.character = {
         name,
         realm,
         region,
         locale: locale ?? availableLocales[region][0]
       }
+      await this.getCharacterMedia()
     }
   }
 })
