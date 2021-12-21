@@ -12,7 +12,6 @@ module.exports = {
     extend: {
       colors: {
         rblue: '#426DF0',
-        // rblue: '#7F9CF5',
         'rblue-hover': '#6C8DF1'
       },
       fontFamily: {
