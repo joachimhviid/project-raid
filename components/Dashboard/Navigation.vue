@@ -1,7 +1,28 @@
 <template>
-  <nav class="fixed top-0 flex flex-col w-56 h-screen p-6 bg-white dark:bg-rblue/70 bg-opacity-90 items-center">
+  <nav
+    class="
+      fixed
+      top-0
+      md:!flex
+      flex-col
+      w-56
+      h-full
+      md:h-screen
+      pt-24
+      p-6
+      bg-white
+      dark:bg-rblue
+      md:dark:bg-rblue/70
+      items-center
+      z-20
+    "
+  >
     <div class="flex flex-col mb-4 items-center text-center">
-      <img class="w-28 h-28 mb-2 rounded-full border-4 border-rblue dark:border-white" :src="characterAvatar" alt="Character avatar" />
+      <img
+        class="w-28 h-28 mb-2 rounded-full border-4 border-rblue dark:border-white"
+        :src="characterAvatar"
+        alt="Character avatar"
+      />
       <span class="text-rblue dark:text-white font-rtext text-2xl font-bold">
         {{ character.raw.name }}
       </span>
@@ -15,7 +36,17 @@
         v-for="(route, index) in dashboardRoutes"
         :key="index"
         :to="route"
-        class="flex flex-col py-6 items-center text-rblue dark:text-white font-rtext text-xl text-center hover:bg-rblue/25 dark:hover:bg-white/50"
+        class="
+          flex flex-col
+          py-6
+          items-center
+          text-rblue
+          dark:text-white
+          font-rtext
+          text-xl text-center
+          hover:bg-rblue/25
+          dark:hover:bg-white/50
+        "
         :class="[route === 'progress' ? 'order-first' : '']"
         append
       >
@@ -27,15 +58,19 @@
     <NuxtLink
       to="/login"
       class="
-        hover:bg-rblue-hover dark:hover:bg-white/80
+        hover:bg-rblue-hover
+        dark:hover:bg-white/80
         px-3
         py-2
         w-40
-        bg-rblue dark:bg-white
-        text-white text-center dark:text-rblue
+        bg-rblue
+        dark:bg-white
+        text-white text-center
+        dark:text-rblue
         font-rtext
         text-xl
-        font-medium dark:font-bold
+        font-medium
+        dark:font-bold
         tracking-wider
         rounded-full
       "
