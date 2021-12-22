@@ -35,7 +35,10 @@
       </div>
       <RealmSelector :region="region" v-model="realm" class="col-span-3 row-start-2" />
     </div>
-    <button class="text-center w-full rounded-lg bg-rblue text-white p-4 font-bold transition hover:bg-rblue-hover">
+    <button
+      type="submit"
+      class="text-center w-full rounded-lg bg-rblue text-white p-4 font-bold transition hover:bg-rblue-hover"
+    >
       Get Dashboard
     </button>
   </form>
@@ -54,9 +57,9 @@ export default defineComponent({
     }
   },
   methods: {
-    submitCharacter() {
+    async submitCharacter() {
       const wow = useWow(this.$pinia)
-      wow.setCharacter(this.name, this.realm, this.region)
+      await wow.setCharacter(this.name, this.realm, this.region)
       this.$router.push(`/dashboard/${this.region}/${this.realm}/${this.name}/progress`)
     }
   }

@@ -28,7 +28,6 @@
       to="/login"
       class="
         hover:bg-rblue-hover dark:hover:bg-white/80
-        cursor-pointer
         px-3
         py-2
         w-40
