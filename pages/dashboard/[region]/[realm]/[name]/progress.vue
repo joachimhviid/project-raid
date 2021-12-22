@@ -2,7 +2,7 @@
   <div>
     <div class="flex items-center space-x-3 mb-4">
       <img class="w-14" src="@/assets/icons/pve_pvp.png" alt="" />
-      <h2 class="text-rblue font-rtext text-4xl">PROGRESS</h2>
+      <h2 class="text-rblue dark:text-white font-rtext text-4xl">PROGRESS</h2>
     </div>
     <div class="grid grid-cols-4 grid-rows-2 gap-8">
       <DashboardCardCharacterInfo class="col-span-2" />

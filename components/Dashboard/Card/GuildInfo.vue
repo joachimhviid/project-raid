@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white dark:bg-rwhite bg-opacity-80 col-span-4 row-span-0 rounded-md p-4">
+  <div class="bg-white dark:bg-rblue dark:bg-opacity-70 rounded-md p-4">
     <div class="flex">
       <div class="flex-col text-center space-y-2 mx-6 pr-9 pt-5">
         <span class="text-rblue dark:text-white font-rtext text-3xl font-bold">Guildo Buildo</span>

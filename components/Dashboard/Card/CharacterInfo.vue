@@ -1,22 +1,22 @@
 <template>
-  <div class="bg-white rounded-lg p-4 flex gap-8 justify-between">
+  <div class="bg-white dark:bg-rblue dark:bg-opacity-70 rounded-lg p-4 flex gap-8 justify-between">
     <div class="flex flex-col items-center text-center flex-shrink-0">
-      <img class="w-28 h-28 mb-2 rounded-full border-4 border-rblue" :src="characterAvatar" alt="Character avatar" />
-      <span class="text-rblue font-rtext text-2xl font-bold">
+      <img class="w-28 h-28 mb-2 rounded-full border-4 border-rblue dark:border-white" :src="characterAvatar" alt="Character avatar" />
+      <span class="text-rblue dark:text-white font-rtext text-2xl font-bold">
         {{ characterProfile.name }}
       </span>
-      <span class="text-gray-500 font-bold text-sm">
+      <span class="text-gray-500 dark:text-white font-bold text-sm">
         ({{ character.region.toUpperCase() }}) {{ characterProfile.realm.name }}
       </span>
-      <span class="text-gray-500 text-sm">{{ characterProfile.race.name }}</span>
-      <span class="text-gray-500 text-sm"
+      <span class="text-gray-500 dark:text-white text-sm">{{ characterProfile.race.name }}</span>
+      <span class="text-gray-500 dark:text-white text-sm"
         >{{ characterProfile.active_spec.name }} {{ characterProfile.character_class.name }}</span
       >
     </div>
     <div class="flex flex-col">
       <div class="">
-        <h2 class="text-rblue font-rtext text-2xl font-bold">Bio</h2>
-        <p class="text-rblue font-rtext">
+        <h2 class="text-rblue dark:text-white font-rtext text-2xl font-bold">Bio</h2>
+        <p class="text-rblue dark:text-white font-rtext">
           It is a long established fact that a reader will be distracted by the readable content of a page when looking
           at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
           opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing
@@ -24,26 +24,26 @@
         </p>
       </div>
       <!--TODO: This should be a component-->
-      <div class="flex bg-rblue mt-4 rounded-md py-4 px-8 justify-between">
+      <div class="flex bg-rblue dark:bg-white mt-4 rounded-md py-4 px-8 justify-between">
         <div class="flex flex-col text-center">
-          <span class="text-white font-rtext text-3xl font-bold">{{ characterProfile.level }}</span>
-          <span class="text-white font-rtext text-lg">Level</span>
+          <span class="text-white dark:text-rblue font-rtext text-3xl font-bold">{{ characterProfile.level }}</span>
+          <span class="text-white dark:text-rblue font-rtext text-lg">Level</span>
         </div>
         <div class="flex flex-col text-center">
-          <span class="text-white font-rtext text-3xl font-bold">{{ characterProfile.equipped_item_level }}</span>
-          <span class="text-white font-rtext text-lg">Item Level</span>
+          <span class="text-white dark:text-rblue font-rtext text-3xl font-bold">{{ characterProfile.equipped_item_level }}</span>
+          <span class="text-white dark:text-rblue font-rtext text-lg">Item Level</span>
         </div>
         <div class="flex flex-col text-center">
-          <span class="text-white font-rtext text-3xl font-bold">{{
+          <span class="text-white dark:text-rblue font-rtext text-3xl font-bold">{{
             characterProfile.covenant_progress.renown_level
           }}</span>
-          <span class="text-white font-rtext text-lg">{{
+          <span class="text-white dark:text-rblue font-rtext text-lg">{{
             characterProfile.covenant_progress.chosen_covenant.name
           }}</span>
         </div>
         <div class="flex flex-col text-center">
-          <span class="text-white font-rtext text-3xl font-bold">{{ characterProfile.achievement_points }}</span>
-          <span class="text-white font-rtext text-lg">Achievement Points</span>
+          <span class="text-white dark:text-rblue font-rtext text-3xl font-bold">{{ characterProfile.achievement_points }}</span>
+          <span class="text-white dark:text-rblue font-rtext text-lg">Achievement Points</span>
         </div>
       </div>
     </div>
