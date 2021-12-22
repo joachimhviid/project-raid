@@ -1,11 +1,11 @@
 <template>
-  <nav class="fixed top-0 flex flex-col w-56 h-screen p-6 bg-white bg-opacity-90 items-center">
+  <nav class="fixed top-0 flex flex-col w-56 h-screen p-6 bg-white dark:bg-rblue/70 bg-opacity-90 items-center">
     <div class="flex flex-col mb-4 items-center text-center">
-      <img class="w-28 h-28 mb-2 rounded-full border-4 border-rblue" :src="characterAvatar" alt="Character avatar" />
-      <span class="text-rblue font-rtext text-2xl font-bold">
+      <img class="w-28 h-28 mb-2 rounded-full border-4 border-rblue dark:border-white" :src="characterAvatar" alt="Character avatar" />
+      <span class="text-rblue dark:text-white font-rtext text-2xl font-bold">
         {{ character.raw.name }}
       </span>
-      <span class="text-gray-500 font-bold text-sm">
+      <span class="text-rblue dark:text-white/70 font-bold text-sm">
         ({{ character.region.toUpperCase() }}) {{ character.raw.realm.name }}
       </span>
     </div>
@@ -15,7 +15,7 @@
         v-for="(route, index) in dashboardRoutes"
         :key="index"
         :to="route"
-        class="flex flex-col py-6 items-center text-rblue font-rtext text-xl text-center hover:bg-rblue/25"
+        class="flex flex-col py-6 items-center text-rblue dark:text-white font-rtext text-xl text-center hover:bg-rblue/25 dark:hover:bg-white/50"
         :class="[route === 'progress' ? 'order-first' : '']"
         append
       >
@@ -27,16 +27,16 @@
     <NuxtLink
       to="/login"
       class="
-        hover:bg-rblue-hover
+        hover:bg-rblue-hover dark:hover:bg-white/80
         cursor-pointer
         px-3
         py-2
         w-40
-        bg-rblue
-        text-white text-center
+        bg-rblue dark:bg-white
+        text-white text-center dark:text-rblue
         font-rtext
         text-xl
-        font-medium
+        font-medium dark:font-bold
         tracking-wider
         rounded-full
       "

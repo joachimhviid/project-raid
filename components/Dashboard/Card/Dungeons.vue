@@ -1,15 +1,15 @@
 <template>
-  <div class="bg-white p-4 rounded-lg">
-    <h2 class="font-bold text-xl">Dungeons</h2>
+  <div class="bg-white p-4 bg-opacity-80 dark:bg-rblue dark:bg-opacity-70 rounded-md">
+    <h2 class="font-bold text-2xl font-rtext text-rblue dark:text-white tracking-wide">Dungeons</h2>
     <DungeonInfo :score="dungeons.mythic_plus_scores_by_season[0].scores.all" />
     <!--List of current season dungeon bests fort/tyr-->
-    <div class="grid grid-cols-2 rounded-lg overflow-hidden">
+    <div class="grid grid-cols-2 rounded-md overflow-hidden">
       <DungeonRow v-for="[key, value] in mythicPlusDungeonMap" :key="key" :dungeonSet="value" />
     </div>
     <div class="flex justify-end gap-4 mt-3">
-      <span class="text-sm text-gray-500">Rating</span>
-      <span class="text-sm text-gray-500">Tyrannical</span>
-      <span class="text-sm text-gray-500">Fortified</span>
+      <span class="text-sm font-medium text-rblue dark:text-white">Rating</span>
+      <span class="text-sm text-rblue dark:text-white">Tyrannical</span>
+      <span class="text-sm text-rblue dark:text-white">Fortified</span>
     </div>
   </div>
 </template>

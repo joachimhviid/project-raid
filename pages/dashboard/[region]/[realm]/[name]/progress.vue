@@ -1,15 +1,15 @@
 <template>
   <div>
     <div class="flex items-center space-x-3 mb-4">
-      <img class="w-14" src="@/assets/icons/pve_pvp.png" alt="" />
-      <h2 class="text-rblue font-rtext text-4xl cursor-default">PROGRESS</h2>
+      <img class="w-16" src="@/assets/icons/pve_pvp.png" alt="" />
+      <h2 class="text-rblue dark:text-white font-rtext text-4xl cursor-default">PROGRESS</h2>
     </div>
-    <div class="grid grid-cols-4 grid-rows-2 gap-8">
-      <DashboardCardCharacterInfo class="col-span-2" />
-      <DashboardCardCharacterGuild />
-      <DashboardCardCharacterSocials />
-      <DashboardCardRaids class="row-span-2" />
-      <DashboardCardDungeons class="row-span-2" />   
+    <div class="grid grid-cols-7 grid-rows-2 gap-8">
+      <DashboardCardCharacterInfo class="col-span-4 row-span-0" />
+      <DashboardCardCharacterSocials class="col-end-1" />
+      <DashboardCardCharacterGuild class="col-span-3" />
+      <DashboardCardDungeons class="row-span-2 row-start-1 col-start-6 col-span-2" />  
+      <DashboardCardRaids class="row-span-2 row-start-1 col-start-4 col-span-2" /> 
     </div>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-white p-4 rounded-lg">
-    <h2 class="font-bold text-xl">Raid</h2>
+  <div class="bg-white p-4 bg-opacity-80 dark:bg-rblue dark:bg-opacity-70 rounded-md">
+    <h2 class="font-bold text-2xl font-rtext text-rblue dark:text-white tracking-wide">Raid</h2>
     <!--Highlight of current tier-->
     <!--Current expansion tiers > click to see stats-->
   </div>
