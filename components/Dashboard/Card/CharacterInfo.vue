@@ -1,40 +1,100 @@
 <template>
-  <div class="bg-white bg-opacity-80 w-3/5 h-2/5 rounded-md p-4">
-    <div class="flex-col float-left h-full mx-2 pr-4">
-      <div class="items-center w-36 h-36 mb-1 ml-10 overflow-hidden rounded-full border-4 border-rblue">
-        <img class="h-full w-full" src="@/assets/img/sylv.jpg" alt="" />
-      </div>
-      <div class="w-56 text-center flex flex-col cursor-default">
-        <span class="text-rblue font-rtext text-4xl tracking-wide font-bold">Sylvanas</span>
-        <span class="text-rblue font-rtext text-xl tracking-wide">Kharazan EU</span>
-        <span class="text-rblue font-rtext text-2xl tracking-wide font-semibold">Undead Hunter</span>
-        <span class="text-rblue opacity-70 font-rtext text-xl tracking-wide">Odense, Denmark</span>
-      </div>
+  <div class="bg-white rounded-lg p-4 flex gap-8 justify-between">
+    <div class="flex flex-col items-center text-center flex-shrink-0">
+      <img class="w-28 h-28 mb-2 rounded-full border-4 border-rblue" :src="characterAvatar" alt="Character avatar" />
+      <span class="text-rblue font-rtext text-2xl font-bold">
+        {{ characterProfile.name }}
+      </span>
+      <span class="text-gray-500 font-bold text-sm">
+        ({{ character.region.toUpperCase() }}) {{ characterProfile.realm.name }}
+      </span>
+      <span class="text-gray-500 text-sm">{{ characterProfile.race.name }}</span>
+      <span class="text-gray-500 text-sm"
+        >{{ characterProfile.active_spec.name }} {{ characterProfile.character_class.name }}</span
+      >
     </div>
-    <div class="flex-col mx-14 cursor-default">
-      <span class="text-rblue font-rtext text-3xl tracking-wide font-bold">Bio</span>
-      <p class="text-rblue font-rtext text-xl tracking-wide font-thin overflow-hidden">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing and web pages.</p>
-    </div>
-
-    <div class="flex bg-rblue mt-4 mx-14 h-20 rounded-md px-12 py-1 justify-between cursor-default">
-      <div class="flex flex-col text-center">
-        <span class="text-white font-rtext text-4xl font-bold tracking-widest">241</span>
-        <span class="text-white font-rtext text-2xl tracking-widest">Item Level</span>
+    <div class="flex flex-col">
+      <div class="">
+        <h2 class="text-rblue font-rtext text-2xl font-bold">Bio</h2>
+        <p class="text-rblue font-rtext">
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking
+          at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+          opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing
+          and web pages.
+        </p>
       </div>
-      <div class="flex flex-col text-center">
-        <span class="text-white font-rtext text-4xl font-bold tracking-widest">60</span>
-        <span class="text-white font-rtext text-2xl tracking-widest">Level</span>
-      </div>
-      <div class="flex flex-col text-center">
-        <span class="text-white font-rtext text-4xl font-bold tracking-widest">1975.5</span>
-        <span class="text-white font-rtext text-2xl tracking-widest">Mythic+ Score</span>
+      <!--TODO: This should be a component-->
+      <div class="flex bg-rblue mt-4 rounded-md py-4 px-8 justify-between">
+        <div class="flex flex-col text-center">
+          <span class="text-white font-rtext text-3xl font-bold">{{ characterProfile.level }}</span>
+          <span class="text-white font-rtext text-lg">Level</span>
+        </div>
+        <div class="flex flex-col text-center">
+          <span class="text-white font-rtext text-3xl font-bold">{{ characterProfile.equipped_item_level }}</span>
+          <span class="text-white font-rtext text-lg">Item Level</span>
+        </div>
+        <div class="flex flex-col text-center">
+          <span class="text-white font-rtext text-3xl font-bold">{{
+            characterProfile.covenant_progress.renown_level
+          }}</span>
+          <span class="text-white font-rtext text-lg">{{
+            characterProfile.covenant_progress.chosen_covenant.name
+          }}</span>
+        </div>
+        <div class="flex flex-col text-center">
+          <span class="text-white font-rtext text-3xl font-bold">{{ characterProfile.achievement_points }}</span>
+          <span class="text-white font-rtext text-lg">Achievement Points</span>
+        </div>
       </div>
     </div>
   </div>
 </template>
-<script lang="ts">
-export default defineComponent({
-  name: 'CharacterInfo'
+<script lang="ts" setup>
+import { useWow } from '@/stores/wow'
+import { CharacterProps } from '@/types/BlizzardTypes'
+import { useAsyncData } from '#app'
+
+const wow = useWow()
+
+const { data: profile, pending } = await useAsyncData(
+  'profile',
+  () =>
+    $fetch('/api/profile', {
+      method: 'post',
+      body: wow.character
+    }),
+  {
+    pick: [
+      'equipped_item_level',
+      'achievement_points',
+      'character_class',
+      'active_spec',
+      'covenant_progress',
+      'faction',
+      'gender',
+      'guild',
+      'level',
+      'name',
+      'race',
+      'realm'
+    ],
+    lazy: true
+  }
+)
+
+const characterAvatar = computed((): string => {
+  if (!wow.character.media) return ''
+  return wow.character.media.find((media) => {
+    return media.key === 'avatar'
+  }).value
+})
+
+const character = computed((): CharacterProps => {
+  return wow.character
+})
+
+const characterProfile = computed(() => {
+  if (pending.value) return
+  return profile.value
 })
 </script>
-<style lang="scss" scoped></style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute w-full h-screen bg-outland bg-cover overflow-hidden">
+  <div class="absolute w-full h-screen bg-outland bg-cover bg-fixed">
     <DashboardNavigation />
     <DashboardHeader />
     <slot />
