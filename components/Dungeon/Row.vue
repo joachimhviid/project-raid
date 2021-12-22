@@ -3,9 +3,7 @@
     class="relative aspect-w-16 aspect-h-9 bg-cover bg-center"
     :style="{ 'background-image': `url('${dungeonSet.best.dungeonBackground}')` }"
   >
-    <h3
-      class="text-white text-sm text-center py-2 font-medium bg-gradient-to-b from-black/50 to-transparent text-shadow"
-    >
+    <h3 class="text-white text-sm text-center py-2 font-medium bg-gradient-to-b from-black/50 text-shadow">
       {{ dungeonSet.best.name }}
     </h3>
     <div class="px-4 3xl:px-8 flex items-center justify-between">

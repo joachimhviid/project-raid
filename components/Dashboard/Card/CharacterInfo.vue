@@ -1,7 +1,11 @@
 <template>
   <div class="bg-white dark:bg-rblue dark:bg-opacity-70 rounded-lg p-4 flex gap-8 justify-between">
     <div class="flex flex-col items-center text-center flex-shrink-0">
-      <img class="w-28 h-28 mb-2 rounded-full border-4 border-rblue dark:border-white" :src="characterAvatar" alt="Character avatar" />
+      <img
+        class="w-28 h-28 mb-2 rounded-full border-4 border-rblue dark:border-white"
+        :src="characterAvatar"
+        alt="Character avatar"
+      />
       <span class="text-rblue dark:text-white font-rtext text-2xl font-bold">
         {{ characterProfile.name }}
       </span>
@@ -30,7 +34,9 @@
           <span class="text-white dark:text-rblue font-rtext text-lg">Level</span>
         </div>
         <div class="flex flex-col text-center">
-          <span class="text-white dark:text-rblue font-rtext text-3xl font-bold">{{ characterProfile.equipped_item_level }}</span>
+          <span class="text-white dark:text-rblue font-rtext text-3xl font-bold">{{
+            characterProfile.equipped_item_level
+          }}</span>
           <span class="text-white dark:text-rblue font-rtext text-lg">Item Level</span>
         </div>
         <div class="flex flex-col text-center">
@@ -42,7 +48,9 @@
           }}</span>
         </div>
         <div class="flex flex-col text-center">
-          <span class="text-white dark:text-rblue font-rtext text-3xl font-bold">{{ characterProfile.achievement_points }}</span>
+          <span class="text-white dark:text-rblue font-rtext text-3xl font-bold">{{
+            characterProfile.achievement_points
+          }}</span>
           <span class="text-white dark:text-rblue font-rtext text-lg">Achievement Points</span>
         </div>
       </div>

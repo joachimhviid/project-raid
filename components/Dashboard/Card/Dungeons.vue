@@ -2,8 +2,7 @@
   <div class="bg-white p-4 bg-opacity-80 dark:bg-rblue dark:bg-opacity-70 rounded-md">
     <h2 class="font-bold text-2xl font-rtext text-rblue dark:text-white tracking-wide">Dungeons</h2>
     <DungeonInfo :score="dungeons.mythic_plus_scores_by_season[0].scores.all" />
-    <!--List of current season dungeon bests fort/tyr-->
-    <div class="grid grid-cols-2 rounded-md overflow-hidden">
+    <div class="grid grid-cols-2 rounded-md overflow-hidden dark:border dark:border-white">
       <DungeonRow v-for="[key, value] in mythicPlusDungeonMap" :key="key" :dungeonSet="value" />
     </div>
     <div class="flex justify-end gap-4 mt-3">
