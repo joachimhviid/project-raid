@@ -6,7 +6,7 @@
     <h3 class="text-white text-sm text-center py-2 font-medium bg-gradient-to-b from-black/50 text-shadow">
       {{ dungeonSet.best.name }}
     </h3>
-    <div class="px-4 3xl:px-8 flex items-center justify-between">
+    <div class="px-2 pt-2 xl:pt-0 xl:px-4 3xl:px-8 flex items-center justify-between">
       <span class="font-bold text-white text-xl text-shadow order-first 3xl:text-3xl">{{ totalScore }}</span>
       <div class="flex gap-4">
         <div
