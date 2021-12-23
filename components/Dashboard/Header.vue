@@ -1,9 +1,20 @@
 <template>
   <header
-    class="fixed top-0 inset-x-0 md:pl-56 w-full bg-white dark:bg-rblue dark:md:bg-transparent md:bg-transparent z-20"
+    class="
+      fixed
+      lg:absolute
+      top-0
+      inset-x-0
+      lg:pl-56
+      w-full
+      bg-white
+      dark:bg-rblue dark:lg:bg-transparent
+      lg:bg-transparent
+      z-20
+    "
   >
     <div class="flex justify-between items-center h-24 p-8">
-      <button class="w-8 h-8 md:hidden" @click="toggleNavigation">
+      <button class="w-8 h-8 lg:hidden" @click="toggleNavigation">
         <svg class="fill-current text-rblue dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
           <path
             d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
@@ -16,7 +27,7 @@
           dark:text-white
           font-rtitle
           text-3xl
-          md:text-5xl
+          lg:text-5xl
           font-extrabold
           tracking-widest
           cursor-pointer
@@ -26,7 +37,7 @@
       </span>
       <div class="flex items-center">
         <!--TODO: Make search component. Also what are we searching for? Maybe this should be repurposed as a new character selector-->
-        <div class="hidden md:flex items-center mx-4 border-2 rounded-full h-12 py-2 px-4 border-rblue">
+        <div class="hidden lg:flex items-center mx-4 border-2 rounded-full h-12 py-2 px-4 border-rblue">
           <img class="w-6 h-6" src="~/assets/icons/search.png" alt="" />
           <input
             type="text"

@@ -4,12 +4,12 @@
       <img class="w-14" src="@/assets/icons/pve_pvp.png" alt="" />
       <h2 class="text-rblue dark:text-white font-rtext text-4xl">PROGRESS</h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-8">
-      <DashboardCardCharacterInfo class="md:col-span-2" />
-      <DashboardCardCharacterSocials class="md:row-start-2" />
-      <DashboardCardCharacterGuild class="md:row-start-2" />
-      <DashboardCardRaids class="md:row-span-2" />
-      <DashboardCardDungeons class="md:row-span-2" />
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+      <DashboardCardCharacterInfo class="md:col-span-2 xl:col-span-4 2xl:col-span-2" />
+      <DashboardCardCharacterSocials class="xl:col-span-2 2xl:row-start-2 2xl:col-span-1" />
+      <DashboardCardCharacterGuild class="xl:col-span-2 2xl:row-start-2 2xl:col-span-1" />
+      <DashboardCardRaids class="xl:col-span-2 2xl:row-span-2 2xl:col-span-1" />
+      <DashboardCardDungeons class="xl:col-span-2 2xl:row-span-2 2xl:col-span-1" />
     </div>
   </div>
 </template>

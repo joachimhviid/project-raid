@@ -48,8 +48,12 @@
           mt-4
           rounded-md
           py-4
-          px-8
+          px-4
+          xl:px-8
           justify-between
+          max-w-md
+          self-center
+          md:self-start
         "
       >
         <div class="flex flex-col text-center">
@@ -60,7 +64,8 @@
           <span class="text-white dark:text-rblue font-rtext text-3xl font-bold">{{
             characterProfile.equipped_item_level
           }}</span>
-          <span class="text-white dark:text-rblue font-rtext text-lg">Item Level</span>
+          <span class="hidden xl:block text-white dark:text-rblue font-rtext text-lg">Item Level</span>
+          <span class="block xl:hidden text-white dark:text-rblue font-rtext text-lg">Ilvl</span>
         </div>
         <div class="flex flex-col text-center">
           <span class="text-white dark:text-rblue font-rtext text-3xl font-bold">{{
@@ -74,8 +79,8 @@
           <span class="text-white dark:text-rblue font-rtext text-3xl font-bold">{{
             characterProfile.achievement_points
           }}</span>
-          <span class="hidden md:block text-white dark:text-rblue font-rtext text-lg">Achievement Points</span>
-          <span class="block md:hidden text-white dark:text-rblue font-rtext text-lg">Ach. Points</span>
+          <span class="hidden xl:block text-white dark:text-rblue font-rtext text-lg">Achievement Points</span>
+          <span class="block xl:hidden text-white dark:text-rblue font-rtext text-lg">Ach. Points</span>
         </div>
       </div>
     </div>
