@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "project-raid-19307"
+  },
+  "functions": { "source": ".output/server" },
+  "hosting": {
+    "site": "project-raid-19307",
+    "public": ".output/public",
+    "cleanUrls": true,
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [{ "source": "**", "function": "server" }]
+  }
+}
