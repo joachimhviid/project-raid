@@ -4,16 +4,13 @@
       class="
         relative
         font-bold
-        text-gray-700 text-2xl text-center
-        dark:text-white dark:after:bg-white
+        text-rblue text-3xl
         pb-2
-        mb-4
-        after:bg-rblue after:h-px after:w-1/2 after:mx-auto after:absolute after:bottom-0 after:inset-x-0
+        mb-6
       "
     >
-      Select your character
+      SELECT YOUR CHARACTER
     </h1>
-    <!--TODO: Create loading state-->
     <CharacterFinder />
   </div>
 </template>

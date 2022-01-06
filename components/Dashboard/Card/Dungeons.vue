@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white p-4 bg-opacity-80 dark:bg-rblue dark:bg-opacity-70 rounded-md">
+  <div class="bg-white p-4 dark:bg-rblue dark:bg-opacity-70 rounded-md">
     <h2 class="font-bold text-2xl font-rtext text-rblue dark:text-white tracking-wide">Dungeons</h2>
     <DungeonInfo :score="dungeons.mythic_plus_scores_by_season[0].scores.all" />
     <div class="grid grid-cols-2 rounded-md overflow-hidden dark:border dark:border-white">

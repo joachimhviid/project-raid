@@ -2,7 +2,7 @@
   <div>
     <div class="flex items-center space-x-3 mb-4">
       <svg
-        class="h-12 fill-current text-white dark:text-rblue"
+        class="h-12 fill-current dark:text-white text-rblue"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 640 512"
       >

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col bg-white bg-opacity-80 dark:bg-rblue dark:bg-opacity-70 rounded-lg p-4">
+  <div class="flex flex-col bg-white dark:bg-rblue dark:bg-opacity-70 rounded-lg p-4">
     <h2 class="text-rblue dark:text-white font-rtext font-bold text-2xl mb-4">Members</h2>
 
     <div class="grid grid-cols-2 gap-4 overflow-y-scroll max-h-64">

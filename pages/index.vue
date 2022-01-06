@@ -13,7 +13,7 @@
         <span class="text-white font-rtext text-3xl font-bold mb-4">
           The home for personal WoW statistics and tracking
         </span>
-        <a href="" class="btn self-center">GET STARTED</a>
+        <NuxtLink to="/login" class="btn self-center">GET STARTED</NuxtLink>
       </div>
     </div>
 

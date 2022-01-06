@@ -37,7 +37,6 @@
         opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing and
         web pages.
       </p>
-      <!--TODO: This should be a component-->
       <div
         class="
           grid grid-rows-2 grid-cols-2
@@ -51,7 +50,7 @@
           px-4
           xl:px-8
           justify-between
-          max-w-md
+          max-w-lg
           self-center
           md:self-start
         "
