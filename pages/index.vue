@@ -1,7 +1,7 @@
 <template>
   <div class="bg-cover min-h-screen bg-thrall">
     <header class="btn-container">
-      <a href="" class="sign-up">SIGN UP</a>
+      <NuxtLink to="/login" class="sign-up">SIGN UP</NuxtLink>
       <NuxtLink to="/login" class="btn">LOGIN</NuxtLink>
     </header>
 
