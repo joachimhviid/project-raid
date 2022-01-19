@@ -11,7 +11,7 @@
       pt-24
       md:pt-6
       p-6
-      bg-white
+      bg-white/80
       dark:bg-rblue
       lg:dark:bg-rblue/70
       items-center
@@ -20,11 +20,11 @@
   >
     <div class="flex flex-col mb-4 items-center text-center">
       <img
-        class="w-28 h-28 mb-2 rounded-full border-4 border-rblue dark:border-white"
+        class="w-28 h-28 mb-2 rounded-full border-4 border-rblue dark:border-white/80"
         :src="characterAvatar"
         alt="Character avatar"
       />
-      <span class="text-rblue dark:text-white font-rtext text-2xl font-bold">
+      <span class="text-rblue dark:text-white/90 font-rtext text-2xl font-bold">
         {{ character.raw.name }}
       </span>
       <span class="text-rblue dark:text-white/70 font-bold text-sm">
@@ -35,7 +35,7 @@
     <div class="flex flex-col flex-grow space-y-2 mb-2 w-56">
       <DashboardNavigationRoute route="progress">
         <svg
-          class="w-full h-12 fill-current text-rblue dark:text-white"
+          class="w-full h-12 mb-3 fill-current text-rblue dark:text-white/90"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 640 512"
         >
@@ -46,7 +46,7 @@
       </DashboardNavigationRoute>
       <DashboardNavigationRoute route="guild">
         <svg
-          class="w-full h-12 fill-current text-rblue dark:text-white"
+          class="w-full h-14 mb-3 fill-current text-rblue dark:text-white/90"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 465.39 465.39"
         >
@@ -73,12 +73,12 @@
       to="/login"
       class="
         hover:bg-rblue-hover
-        dark:hover:bg-white/80
+        dark:hover:bg-white/70
         px-3
         py-2
         w-40
         bg-rblue
-        dark:bg-white
+        dark:bg-white/80
         text-white text-center
         dark:text-rblue
         font-rtext

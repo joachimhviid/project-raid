@@ -10,7 +10,7 @@
       font-rtext
       text-xl text-center
       hover:bg-rblue/25
-      dark:hover:bg-white/50
+      dark:hover:bg-white/40
     "
     append
   >

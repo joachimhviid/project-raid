@@ -1,7 +1,7 @@
 <template>
   <div
     class="
-      bg-white
+      bg-white bg-opacity-80
       dark:bg-rblue dark:bg-opacity-70
       rounded-lg
       p-4
@@ -13,16 +13,16 @@
     "
   >
     <div class="flex flex-col items-center text-center flex-shrink-0">
-      <h2 class="text-rblue dark:text-white font-rtext text-3xl font-bold">Guildo Buildo</h2>
+      <h2 class="text-rblue dark:text-white/90 font-rtext text-3xl font-bold">Guildo Buildo</h2>
       <img
-        class="items-center w-28 h-28 overflow-hidden rounded-full border-4 border-rblue dark:border-white"
+        class="items-center w-28 h-28 overflow-hidden rounded-full border-4 border-rblue dark:border-white/80"
         src="@/assets/img/guild_icon.jpeg"
         alt="Guild icon"
       />
       <span class="text-rblue dark:text-white opacity-80 font-rtext text-2xl">62 Members</span>
     </div>
     <div class="flex flex-col">
-      <h2 class="text-rblue dark:text-white font-rtext text-2xl font-bold">Description</h2>
+      <h2 class="text-rblue dark:text-white/90 font-rtext text-2xl font-bold">Description</h2>
       <p class="text-rblue dark:text-white font-rtext">
         It is a long established fact that a reader will be distracted by the readable content of a page when looking at
         its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as

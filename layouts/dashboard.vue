@@ -4,7 +4,7 @@
     <DashboardNavigation :class="[menuOpen ? 'flex' : 'hidden']" />
     <DashboardHeader @toggleMenu="toggleMenu" />
     <div
-      class="fixed w-screen h-screen bg-black/50 z-10 lg:!hidden"
+      class="fixed w-screen h-screen bg-white z-10 lg:!hidden"
       :class="[menuOpen ? 'flex' : 'hidden']"
       @click="toggleMenu"
     />

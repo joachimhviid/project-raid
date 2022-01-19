@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="flex items-center space-x-3 mb-4">
+    <div class="flex items-center space-x-4 mb-8 mt-2">
       <svg
-        class="h-12 fill-current dark:text-white text-rblue"
+        class="h-14 fill-current dark:text-white text-rblue"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 465.39 465.39"
       >
@@ -19,7 +19,7 @@
           />
         </g>
       </svg>
-      <h2 class="text-rblue dark:text-white font-rtext text-4xl">GUILD</h2>
+      <h2 class="text-rblue dark:text-white font-rtext tracking-wide text-5xl">GUILD</h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
       <DashboardCardGuildInfo class="md:col-span-3 xl:col-span-4 2xl:col-span-3" />

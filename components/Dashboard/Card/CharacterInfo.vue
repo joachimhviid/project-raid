@@ -1,7 +1,7 @@
 <template>
   <div
     class="
-      bg-white
+      bg-white bg-opacity-80
       dark:bg-rblue dark:bg-opacity-70
       rounded-lg
       p-4
@@ -14,23 +14,23 @@
   >
     <div class="flex flex-col items-center text-center flex-shrink-0">
       <img
-        class="w-28 h-28 mb-2 rounded-full border-4 border-rblue dark:border-white"
+        class="w-28 h-28 mb-2 rounded-full border-4 border-rblue dark:border-white/80"
         :src="characterAvatar"
         alt="Character avatar"
       />
       <span class="text-rblue dark:text-white font-rtext text-2xl font-bold">
         {{ characterProfile.name }}
       </span>
-      <span class="text-gray-500 dark:text-white font-bold text-sm">
+      <span class="text-rblue/90 dark:text-white font-bold text-sm mb-1">
         ({{ character.region.toUpperCase() }}) {{ characterProfile.realm.name }}
       </span>
-      <span class="text-gray-500 dark:text-white text-sm">{{ characterProfile.race.name }}</span>
-      <span class="text-gray-500 dark:text-white text-sm"
+      <span class="text-rblue/80 dark:text-white font-semibold text-sm mb-1">{{ characterProfile.race.name }}</span>
+      <span class="text-rblue/80 dark:text-white font-semibold text-sm"
         >{{ characterProfile.active_spec.name }} {{ characterProfile.character_class.name }}</span
       >
     </div>
     <div class="flex flex-col">
-      <h2 class="text-rblue dark:text-white font-rtext text-2xl font-bold">Bio</h2>
+      <h2 class="text-rblue dark:text-white/90 font-rtext text-2xl font-bold">Bio</h2>
       <p class="text-rblue dark:text-white font-rtext">
         It is a long established fact that a reader will be distracted by the readable content of a page when looking at
         its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
@@ -43,7 +43,7 @@
           gap-4
           md:flex
           bg-rblue
-          dark:bg-white
+          dark:bg-white/90
           mt-4
           rounded-md
           py-4
@@ -56,30 +56,30 @@
         "
       >
         <div class="flex flex-col text-center">
-          <span class="text-white dark:text-rblue font-rtext text-3xl font-bold">{{ characterProfile.level }}</span>
-          <span class="text-white dark:text-rblue font-rtext text-lg">Level</span>
+          <span class="text-white dark:text-rblue font-rtext text-2xl font-bold">{{ characterProfile.level }}</span>
+          <span class="text-white dark:text-rblue font-rtext text-m">Level</span>
         </div>
         <div class="flex flex-col text-center">
-          <span class="text-white dark:text-rblue font-rtext text-3xl font-bold">{{
+          <span class="text-white dark:text-rblue font-rtext text-2xl font-bold">{{
             characterProfile.equipped_item_level
           }}</span>
-          <span class="hidden xl:block text-white dark:text-rblue font-rtext text-lg">Item Level</span>
-          <span class="block xl:hidden text-white dark:text-rblue font-rtext text-lg">Ilvl</span>
+          <span class="hidden xl:block text-white dark:text-rblue font-rtext text-m">Item Level</span>
+          <span class="block xl:hidden text-white dark:text-rblue font-rtext text-m">Ilvl</span>
         </div>
         <div class="flex flex-col text-center">
-          <span class="text-white dark:text-rblue font-rtext text-3xl font-bold">{{
+          <span class="text-white dark:text-rblue font-rtext text-2xl font-bold">{{
             characterProfile.covenant_progress.renown_level
           }}</span>
-          <span class="text-white dark:text-rblue font-rtext text-lg">{{
+          <span class="text-white dark:text-rblue font-rtext text-m">{{
             characterProfile.covenant_progress.chosen_covenant.name
           }}</span>
         </div>
         <div class="flex flex-col text-center">
-          <span class="text-white dark:text-rblue font-rtext text-3xl font-bold">{{
+          <span class="text-white dark:text-rblue font-rtext text-2xl font-bold">{{
             characterProfile.achievement_points
           }}</span>
-          <span class="hidden xl:block text-white dark:text-rblue font-rtext text-lg">Achievement Points</span>
-          <span class="block xl:hidden text-white dark:text-rblue font-rtext text-lg">Ach. Points</span>
+          <span class="hidden xl:block text-white dark:text-rblue font-rtext text-m">Achievement Points</span>
+          <span class="block xl:hidden text-white dark:text-rblue font-rtext text-m">Ach. Points</span>
         </div>
       </div>
     </div>
