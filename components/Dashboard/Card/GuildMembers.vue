@@ -28,15 +28,9 @@
           </span>
         </div>
         <div class="flex flex-col">
-          <span class="text-white dark:text-rblue font-rtext text-xl tracking-wide font-light dark:font-medium"
-            >Sylvanas</span
-          >
-          <span class="text-white dark:text-rblue font-rtext text-xl tracking-wide font-light dark:font-medium"
-            >Undead Hunter</span
-          >
-          <span class="text-white dark:text-rblue font-rtext text-xl tracking-wide font-light dark:font-medium"
-            >Kharazan EU</span
-          >
+          <span class="text-white dark:text-rblue font-rtext text-xl font-light dark:font-medium">Sylvanas</span>
+          <span class="text-white dark:text-rblue font-rtext text-xl font-light dark:font-medium">Undead Hunter</span>
+          <span class="text-white dark:text-rblue font-rtext text-xl font-light dark:font-medium">Kharazan EU</span>
         </div>
       </div>
     </div>

@@ -13,16 +13,8 @@
 </template>
 <script lang="ts" setup>
 import '@/assets/tailwind.scss'
-import { Origins } from 'blizzard.js/dist/endpoints'
-import { useWow } from '@/stores/wow'
-
-const wow = useWow()
-const route = useRoute()
 
 let menuOpen = ref(false)
-
-if (!wow.character)
-  await wow.setCharacter(route.params.name as string, route.params.realm as string, route.params.region as Origins)
 
 function toggleMenu() {
   menuOpen.value = !menuOpen.value

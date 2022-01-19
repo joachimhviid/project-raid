@@ -21,18 +21,7 @@
           />
         </svg>
       </button>
-      <span
-        class="
-          text-rblue
-          dark:text-white
-          font-rtitle
-          text-3xl
-          lg:text-5xl
-          font-extrabold
-          tracking-widest
-          cursor-pointer
-        "
-      >
+      <span class="text-rblue dark:text-white font-rtitle text-3xl lg:text-5xl font-extrabold cursor-pointer">
         RAIDHUB
       </span>
       <div class="flex items-center">

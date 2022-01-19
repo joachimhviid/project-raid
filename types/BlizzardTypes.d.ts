@@ -67,5 +67,5 @@ export interface AffixProps {
 
 export interface MythicPlusTopRuns {
   best: MythicPlusDungeon
-  alt: MythicPlusDungeon
+  alt?: MythicPlusDungeon
 }

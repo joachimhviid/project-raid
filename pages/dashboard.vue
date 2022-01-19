@@ -10,3 +10,13 @@ export default defineComponent({
   layout: 'dashboard'
 })
 </script>
+<script lang="ts" setup>
+import { useWow } from '~/stores/wow'
+import { Origins } from 'blizzard.js/dist/endpoints'
+
+const wow = useWow()
+const route = useRoute()
+
+wow.setCharacter(route.params.name as string, route.params.realm as string, route.params.region as Origins)
+await wow.getCharacterMedia()
+</script>

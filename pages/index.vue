@@ -6,9 +6,7 @@
     </header>
 
     <div class="flex flex-col items-center text-center">
-      <span class="text-rblue font-rtitle text-7xl font-extrabold tracking-widest p-4 mb-16 medium:pt-24 medium:p-0">
-        RAIDHUB
-      </span>
+      <span class="text-rblue font-rtitle text-7xl font-extrabold p-4 mb-16 medium:pt-24 medium:p-0"> RAIDHUB </span>
       <div class="flex flex-col max-w-lg p-10 border-2 border-rblue rounded-xl">
         <span class="text-white font-rtext text-3xl font-bold mb-4">
           The home for personal WoW statistics and tracking

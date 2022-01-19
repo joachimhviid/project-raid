@@ -21,5 +21,6 @@ export default async (req: IncomingMessage) => {
     locale: body.locale ?? 'en_GB'
   })
   const media = await wowClient.characterMedia({ realm: body.realm, name: body.name })
+  console.log('Getting media')
   return media.data
 }
