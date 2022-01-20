@@ -78,7 +78,6 @@ const { data: profile, pending } = await useAsyncData(
 const characterAvatar = computed((): string => {
   if (!wow.character?.media) return ''
   return wow.character.media.find((media) => {
-    console.log('finding media info')
     return media.key === 'avatar'
   }).value
 })

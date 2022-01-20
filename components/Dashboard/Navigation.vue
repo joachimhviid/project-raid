@@ -7,7 +7,6 @@ const wow = useWow()
 const characterAvatar = computed((): string => {
   if (!wow.character?.media) return ''
   return wow.character.media.find((media) => {
-    console.log('finding media nav')
     return media.key === 'avatar'
   }).value
 })

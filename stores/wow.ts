@@ -27,7 +27,6 @@ export const useWow = defineStore('wow', {
       this.realms = realms
     },
     async getCharacterMedia() {
-      console.log('getting media store')
       const { assets, character } = await $fetch('/api/media', {
         method: 'post',
         body: {
@@ -51,7 +50,6 @@ export const useWow = defineStore('wow', {
         region,
         locale: locale ?? availableLocales[region][0]
       }
-      console.log('setting character')
     }
   }
 })
