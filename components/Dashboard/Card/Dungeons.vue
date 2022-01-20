@@ -3,7 +3,12 @@
     <h2 class="font-bold text-2xl font-rtext text-rblue dark:text-white">Dungeons</h2>
     <DungeonInfo :score="mythicPlusScores" />
     <div class="grid grid-cols-2 rounded-md overflow-hidden dark:border dark:border-white">
-      <DungeonRow v-for="[key, value] in mythicPlusDungeonMap" :key="key" :dungeonSet="value" />
+      <DungeonRow
+        v-for="dungeon in dungeonList"
+        :key="dungeon.shortName"
+        :dungeonSet="topMythicPlusDungeons.find((set) => set.best.shortName === dungeon.shortName)"
+        :dungeon="dungeon"
+      />
     </div>
     <div class="flex justify-end gap-4 mt-3">
       <span class="text-sm font-medium text-rblue dark:text-white">Rating</span>
@@ -16,7 +21,7 @@
 import { useWow } from '~/stores/wow'
 import { MythicPlusDungeon } from '@/types/MythicPlus'
 import { useAsyncData } from '#app'
-import { MythicPlusProps, MythicPlusTopRuns } from '~/types/BlizzardTypes'
+import { Dungeon, MythicPlusProps, MythicPlusTopRuns } from '~/types/BlizzardTypes'
 const wow = useWow()
 
 const { data: dungeons, pending } = await useAsyncData('dungeons', () =>
@@ -27,6 +32,49 @@ const { data: dungeons, pending } = await useAsyncData('dungeons', () =>
     }
   })
 )
+
+const dungeonList: Dungeon[] = [
+  {
+    shortName: 'DOS',
+    name: 'De Other Side',
+    zoneId: 13309
+  },
+  {
+    shortName: 'HOA',
+    name: 'Halls of Atonement',
+    zoneId: 12831
+  },
+  {
+    shortName: 'MISTS',
+    name: 'Mists of Tirna Scithe',
+    zoneId: 13334
+  },
+  {
+    shortName: 'PF',
+    name: 'Plaguefall',
+    zoneId: 13228
+  },
+  {
+    shortName: 'SD',
+    name: 'Sanguine Depths',
+    zoneId: 12842
+  },
+  {
+    shortName: 'SOA',
+    name: 'Spires of Ascension',
+    zoneId: 12837
+  },
+  {
+    shortName: 'NW',
+    name: 'The Necrotic Wake',
+    zoneId: 12916
+  },
+  {
+    shortName: 'TOP',
+    name: 'Theater of Pain',
+    zoneId: 12841
+  }
+]
 
 const topMythicPlusDungeons = computed((): MythicPlusTopRuns[] => {
   if (pending.value) return []
@@ -50,16 +98,6 @@ const topMythicPlusDungeons = computed((): MythicPlusTopRuns[] => {
       }
     }
   })
-})
-
-const mythicPlusDungeonMap = computed((): Map<string, MythicPlusTopRuns> => {
-  const dungeonMap = new Map<string, MythicPlusTopRuns>()
-
-  topMythicPlusDungeons.value.forEach((dungeonSet) => {
-    dungeonMap.set(dungeonSet.best.shortName, dungeonSet)
-  })
-
-  return dungeonMap
 })
 
 const mythicPlusScores = computed((): number => {

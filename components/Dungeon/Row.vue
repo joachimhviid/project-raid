@@ -1,26 +1,27 @@
 <script lang="ts" setup>
-import { MythicPlusTopRuns } from '@/types/BlizzardTypes'
+import { Dungeon, MythicPlusTopRuns } from '@/types/BlizzardTypes'
 
 const props = defineProps<{
-  dungeonSet: MythicPlusTopRuns
+  dungeonSet?: MythicPlusTopRuns
+  dungeon: Dungeon
 }>()
 
 const totalScore = computed((): string => {
-  return Number((props.dungeonSet.best?.score ?? 0) + (props.dungeonSet.alt?.score ?? 0)).toFixed(1)
+  return Number((props.dungeonSet?.best?.score ?? 0) + (props.dungeonSet?.alt?.score ?? 0)).toFixed(1)
 })
 </script>
 <template>
   <div
     class="relative aspect-w-16 aspect-h-9 bg-cover bg-center"
-    :style="{ 'background-image': `url('${dungeonSet.best.dungeonBackground}')` }"
+    :style="{ 'background-image': `url('/dungeonMedia/${dungeon.shortName}.jpg')` }"
   >
     <h3 class="text-white text-sm text-center py-2 font-medium bg-gradient-to-b from-black/50 text-shadow">
-      {{ dungeonSet.best.name }}
+      {{ dungeon.name }}
     </h3>
     <div class="px-2 pt-2 xl:pt-0 xl:px-4 3xl:px-8 flex items-center justify-between">
       <span class="font-bold text-white text-xl text-shadow order-first 3xl:text-3xl">{{ totalScore }}</span>
       <div class="flex gap-4">
-        <template v-if="dungeonSet.best">
+        <template v-if="dungeonSet?.best">
           <div
             class="flex flex-col text-white items-center leading-3"
             :class="[
@@ -38,7 +39,7 @@ const totalScore = computed((): string => {
             <span class="text-xs font-bold text-shadow">--:--</span>
           </div>
         </template>
-        <template v-if="dungeonSet.alt">
+        <template v-if="dungeonSet?.alt">
           <div
             class="flex flex-col text-white items-center leading-3"
             :class="[

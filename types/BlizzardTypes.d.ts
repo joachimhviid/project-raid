@@ -69,3 +69,9 @@ export interface MythicPlusTopRuns {
   best: MythicPlusDungeon
   alt?: MythicPlusDungeon
 }
+
+export interface Dungeon {
+  shortName: string
+  name: string
+  zoneId: number
+}
