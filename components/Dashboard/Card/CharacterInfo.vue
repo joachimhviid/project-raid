@@ -1,8 +1,8 @@
 <template>
   <div
     class="
-      bg-white bg-opacity-80
-      dark:bg-rblue dark:bg-opacity-70
+      bg-white/80
+      dark:bg-rblue/70
       rounded-lg
       p-4
       flex flex-col

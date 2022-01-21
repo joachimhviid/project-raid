@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white bg-opacity-80 dark:bg-rblue dark:bg-opacity-70 rounded-lg py-6 px-8 space-y-7">
+  <div class="bg-white/80 dark:bg-rblue/70 rounded-lg py-6 px-8 space-y-7">
     <button class="flex items-center space-x-4">
       <img class="w-12" src="~/assets/icons/twitch_small.png" alt="twitch logo" />
       <span class="text-rblue dark:text-white/90 font-rtext text-2xl">GuildoBuildoTTV</span>

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white bg-opacity-80 p-4 dark:bg-rblue dark:bg-opacity-70 rounded-md">
+  <div class="bg-white/80 p-4 dark:bg-rblue/70 rounded-md">
     <h2 class="font-bold text-2xl font-rtext text-rblue dark:text-white/90 tracking-wide">Raid</h2>
     <!--Highlight of current tier-->
     <!--Current expansion tiers > click to see stats-->
