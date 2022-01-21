@@ -67,5 +67,36 @@ export interface AffixProps {
 
 export interface MythicPlusTopRuns {
   best: MythicPlusDungeon
-  alt: MythicPlusDungeon
+  alt?: MythicPlusDungeon
 }
+//
+// export interface Instance {
+//   id: number
+//   key: {
+//     href: string
+//   }
+//   name: string
+// }
+
+export interface Dungeon {
+  shortName: string
+  name: string
+  zoneId: number
+}
+//
+// export interface Raid {
+//   instance: Instance
+//   modes:
+// }
+//
+// export interface RaidMode {
+//   difficulty: {
+//     name: string
+//     type: string
+//   }
+//   progress: {
+//     completed_count: number
+//     total_count: number
+//     encounters:
+//   }
+// }

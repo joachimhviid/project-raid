@@ -43,14 +43,13 @@ export const useWow = defineStore('wow', {
       this.region = region
       this.locale = locale ?? availableLocales[region][0]
     },
-    async setCharacter(name: string, realm: string, region: Origins, locale?: Locales) {
+    setCharacter(name: string, realm: string, region: Origins, locale?: Locales) {
       this.character = {
         name,
         realm,
         region,
         locale: locale ?? availableLocales[region][0]
       }
-      await this.getCharacterMedia()
     }
   }
 })

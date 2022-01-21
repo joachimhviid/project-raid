@@ -9,7 +9,7 @@
 import { useWow } from '~/stores/wow'
 const wow = useWow()
 
-const { data: raids } = await useAsyncData('raids', () =>
+const { data, pending } = await useAsyncData('raids', () =>
   $fetch('/api/raids', {
     method: 'post',
     body: {
@@ -17,4 +17,13 @@ const { data: raids } = await useAsyncData('raids', () =>
     }
   })
 )
+//
+// const expansionRaidMap = computed(() => {
+//   if (pending.value) return {}
+//   const expansionMap = new Map()
+//   data.value.raids.forEach((expansion) => {
+//     expansionMap.set(expansion.expansion.name, expansion.instances)
+//   })
+//   return expansionMap
+// })
 </script>

@@ -1,3 +1,30 @@
+<script lang="ts" setup>
+import { useWow } from '~/stores/wow'
+
+const wow = useWow()
+
+useMeta({
+  title: `${wow.character?.raw?.name ?? wow.character.name} @ ${
+    wow.character?.raw?.realm.name ?? wow.character.realm
+  } (${wow.character?.region.toUpperCase()}) | Raidhub`,
+  meta: [
+    {
+      name: 'og:title',
+      content: `Raidhub | ${wow.character.raw.name ?? wow.character.name} @ ${
+        wow.character.raw.realm.name ?? wow.character.realm
+      } (${wow.character.region.toUpperCase()})`
+    },
+    {
+      name: 'og:description',
+      content: 'Class/Spec - ilvl - m+ score - raid prog'
+    },
+    {
+      name: 'og:site_name',
+      content: 'Raidhub'
+    }
+  ]
+})
+</script>
 <template>
   <div>
     <div class="flex items-center space-x-4 mb-8 mt-2">
@@ -21,30 +48,3 @@
     </div>
   </div>
 </template>
-<script lang="ts" setup>
-import { useWow } from '~/stores/wow'
-
-const wow = useWow()
-
-useMeta({
-  title: `${wow.character.raw.name ?? wow.character.name} @ ${
-    wow.character.raw.realm.name ?? wow.character.realm
-  } (${wow.character.region.toUpperCase()}) | Raidhub`,
-  meta: [
-    {
-      name: 'og:title',
-      content: `Raidhub | ${wow.character.raw.name ?? wow.character.name} @ ${
-        wow.character.raw.realm.name ?? wow.character.realm
-      } (${wow.character.region.toUpperCase()})`
-    },
-    {
-      name: 'og:description',
-      content: 'Class/Spec - ilvl - m+ score - raid prog'
-    },
-    {
-      name: 'og:site_name',
-      content: 'Raidhub'
-    }
-  ]
-})
-</script>

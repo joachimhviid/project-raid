@@ -1,3 +1,20 @@
+<script lang="ts" setup>
+import { useWow } from '@/stores/wow'
+import { CharacterProps } from '@/types/BlizzardTypes'
+
+const wow = useWow()
+
+const characterAvatar = computed((): string => {
+  if (!wow.character?.media) return ''
+  return wow.character.media.find((media) => {
+    return media.key === 'avatar'
+  }).value
+})
+
+const character = computed((): CharacterProps => {
+  return wow.character
+})
+</script>
 <template>
   <nav
     class="
@@ -24,12 +41,14 @@
         :src="characterAvatar"
         alt="Character avatar"
       />
-      <span class="text-rblue dark:text-white/90 font-rtext text-2xl font-bold">
-        {{ character.raw.name }}
-      </span>
-      <span class="text-rblue dark:text-white/70 font-bold text-sm">
-        ({{ character.region.toUpperCase() }}) {{ character.raw.realm.name }}
-      </span>
+      <template v-if="character">
+        <span class="text-rblue dark:text-white/90 font-rtext text-2xl font-bold">
+          {{ character.raw?.name ?? character.name }}
+        </span>
+        <span class="text-rblue dark:text-white/70 font-bold text-sm">
+          ({{ character.region.toUpperCase() }}) {{ character.raw?.realm.name ?? character.realm }}
+        </span>
+      </template>
     </div>
 
     <div class="flex flex-col flex-grow space-y-2 mb-2 w-56">
@@ -85,27 +104,9 @@
         text-xl
         font-medium
         dark:font-bold
-        tracking-wider
         rounded-full
       "
       >LOG OUT
     </NuxtLink>
   </nav>
 </template>
-<script lang="ts" setup>
-import { useWow } from '@/stores/wow'
-import { CharacterProps } from '@/types/BlizzardTypes'
-
-const wow = useWow()
-
-const characterAvatar = computed((): string => {
-  if (!wow.character.media) return ''
-  return wow.character.media.find((media) => {
-    return media.key === 'avatar'
-  }).value
-})
-
-const character = computed((): CharacterProps => {
-  return wow.character
-})
-</script>
