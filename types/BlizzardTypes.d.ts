@@ -69,34 +69,63 @@ export interface MythicPlusTopRuns {
   best: MythicPlusDungeon
   alt?: MythicPlusDungeon
 }
-//
-// export interface Instance {
-//   id: number
-//   key: {
-//     href: string
-//   }
-//   name: string
-// }
+
+export interface Instance {
+  id: number
+  key: {
+    href: string
+  }
+  name: string
+}
 
 export interface Dungeon {
   shortName: string
   name: string
   zoneId: number
 }
-//
-// export interface Raid {
-//   instance: Instance
-//   modes:
-// }
-//
-// export interface RaidMode {
-//   difficulty: {
-//     name: string
-//     type: string
-//   }
-//   progress: {
-//     completed_count: number
-//     total_count: number
-//     encounters:
-//   }
-// }
+
+export interface Raid {
+  instance: Instance
+  modes: RaidMode[]
+}
+
+export interface RaidMode {
+  difficulty: {
+    name: string
+    type: string
+  }
+  progress: {
+    completed_count: number
+    total_count: number
+    encounters: Encounter[]
+  }
+  status: {
+    name: string
+    type: string
+  }
+}
+
+export interface Encounter {
+  completed_count: number
+  last_kill_timestamp: number
+  encounter: {
+    id: number
+    name: string
+    key: {
+      href: string
+    }
+  }
+}
+
+export interface RaidExpansion {
+  expansion: Expansion
+  instances: Raid[]
+}
+
+export interface Expansion {
+  id: number
+  key: {
+    href: string
+  }
+  name: string
+}
